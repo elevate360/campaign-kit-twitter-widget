@@ -1,0 +1,275 @@
+/*! Twitter Widgets by Campaign Kit */
+@import "variables";
+@import "mixins";
+
+@import "icons";
+
+.campaignkit-twitter:before,
+.campaignkit-twitter:after,
+.twitter-tweet:before,
+.twitter-tweet:after {
+	@include clearfix();
+}
+
+.campaignkit-twitter:after,
+.twitter-tweet {
+	@include clearfix-after();
+}
+
+.campaignkit-twitter {
+	background-color: $color__white;
+	border: 1px solid rgba( 0,0,0,.1 );
+	border-radius: 5px;
+	font-size: 14px;
+	line-height: 1.5;
+
+	.tweet-cover {
+		background-color: $color__text-main;
+		background-attachment: scroll;
+		background-repeat: no-repeat;
+		background-position: top center;
+		background-size: cover;
+		text-align: center;
+		border-top-left-radius: $gutter__width/2;
+		border-top-right-radius: $gutter__width/2;
+		overflow: hidden;
+	}
+
+	.tweet-cover__profile {
+		background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=0 );
+
+		color: $color__white;
+		padding: $gutter__width*2 $gutter__width $gutter__width;
+	}
+
+	.tweet-cover__photo,
+	.tweet-cover__username {
+		a {
+			display: inline-block;
+		}
+	}
+
+	.tweet-cover__photo a {
+		margin-bottom: $gutter__width;
+		overflow: hidden;
+		border-radius: 48px;
+		img {
+			display: block;
+			vertical-align: top;
+		}
+	}
+
+	.tweet-cover__username a {
+		color: $color__white!important;
+		font-weight: bold;
+		&:hover,
+		&:focus {
+			opacity: 0.5;
+		}
+		span {
+			display: block;
+			font-weight: normal;
+			font-size: 80%;
+		}
+	}
+
+	.tweet-cover__description {
+		margin-top: $gutter__width;
+	}
+
+	.tweet-cover__meta {
+	    background-color: $color__white;
+	    overflow: hidden;
+	}
+
+	.tweet-cover__tweets,
+	.tweet-cover__following,
+	.tweet-cover__follower {
+		display: inline-block;
+		width: 33.33%;
+		padding: $gutter__width;
+		span {
+			display: block;
+			font-weight: bold;
+		}
+	}
+
+	.twitter-tweets {
+		border-top: 1px solid rgba( 0,0,0,.1 );
+		border-bottom: 1px solid rgba( 0,0,0,.1 );
+		overflow-y: auto;
+		.twitter-tweet:last-child {
+			border-bottom-width: 0;
+		}
+	}
+
+	.twitter-tweet {
+		background-color: $color__white;
+		border-bottom: 1px solid rgba( 0,0,0,.1);
+		padding: $gutter__width;
+		position: relative;
+		word-wrap: break-word;
+		transition: all ease-in-out .25s;
+
+		&:hover {
+			background-color: lighten( $color__blue, 50% );
+			z-index: 1;
+		}
+	}
+
+	.retweet-badge {
+		background-color: rgba(0,0,0,.05);
+		display: inline-block;
+		padding: 4px 8px;
+		border-radius: 5px;
+		line-height: 1;
+	}
+
+	.tweet-profile {
+		clear: both;
+		overflow: hidden;
+		margin-bottom: $gutter__width/2;
+	}
+
+	.tweet-profile__image {
+		overflow: hidden;
+		float: left;
+		img {
+			display: block;
+			vertical-align: top;
+		}
+	}
+
+	&.has__tweet-profile {
+
+		.tweet-profile__user {
+			margin-left: 10px;
+		}
+
+		.tweet-profile__user,
+		.tweet-date {
+			display: inline-block;
+		}
+
+		.tweet-text,
+		.tweet-media,
+		.tweet-date,
+		.tweet-meta {
+			margin-left: 58px;
+		}
+
+	}
+
+	.tweet-profile__user span {
+		display: block;
+	}
+
+	.tweet-profile__name {
+		color: $color__text-main;
+		font-weight: bold;
+	}
+
+	.tweet-profile__screen,
+	.tweet-date {
+		color: $color__text-secondary;
+		font-size: 80%;
+	}
+
+	.tweet-profile__name,
+	.tweet-profile__screen,
+	.tweet-date,
+	.tweet-meta a {
+		&:hover,
+		&:focus {
+			color: $color__blue;
+		}
+	}
+
+	.tweet-text {
+		margin-bottom: $gutter__width/2;
+	}
+
+	.tweet-media {
+		display: grid;
+		justify-content: stretch;
+		grid-column-gap: 1px;
+		grid-row-gap: 1px;
+		margin-bottom: $gutter__width/2;
+		overflow: hidden;
+		border-radius: $gutter__width/2;
+		&.tweet-media-2 {
+			grid-template-columns: repeat( 2, 1fr );
+		}
+
+		&.tweet-media-3,
+		&.tweet-media-4 {
+			grid-template-columns: repeat( 3, 1fr );
+		}
+		&.tweet-media-3 .image-1{
+		    grid-column-start: 1;
+		    grid-column-end: 3;
+		    grid-row-start: 1;
+		    grid-row-end: 3;
+		}
+		&.tweet-media-4 .image-1{
+		    grid-column-start: 1;
+		    grid-column-end: 3;
+		    grid-row-start: 1;
+		    grid-row-end: 4;
+		}
+	}
+
+	.tweet-media__item {
+		position: relative;
+		overflow: hidden;
+		margin: 0;
+		a {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		img {
+			min-height: 100%;
+			object-fit: cover;
+			object-position: 50% 50%;
+			vertical-align: top;
+		}
+	}
+
+	.tweet-meta {
+		a {
+			color: $color__text-secondary;
+			display: inline-block;
+			margin: $gutter__width $gutter__width 0 0;
+		}
+	}
+
+	a.tweet-follow {
+		background-color: $color__blue;
+		color: $color__white!important;
+		display: block;
+		margin: $gutter__width;
+		padding: 10px;
+		position: relative;
+		text-align: center;
+		overflow: hidden;
+		border-radius: $gutter__width/2;
+		.ck-twitter-icon-twitter {
+			background-color: rgba( 0,0,0,.05 );
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+		}
+		&:hover,
+		&:focus {
+			background-color: lighten( $color__blue, 10% );
+		}
+	}
+
+}
