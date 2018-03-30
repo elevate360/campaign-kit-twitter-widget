@@ -135,7 +135,7 @@ We also include custom properties between the output (**not** officially from Tw
 
 = What options can I use for the shortcode? =
 
-All the options are listed on the [plugin installation page](https://wordpress.org/plugins/campaignkit-twitter/installation/).
+All the options are listed on the [plugin installation page](https://wordpress.org/plugins/campaign-kit-twitter-widget/installation/).
 
 = How to disable style and script =
 
@@ -146,7 +146,7 @@ You can simply add this function into your theme functions:
 
 = How to build my own Twitter markup? =
 
-You can learn more at [plugin installation page](https://wordpress.org/plugins/campaignkit-twitter/installation/).
+You can learn more at [plugin installation page](https://wordpress.org/plugins/campaign-kit-twitter-widget/installation/).
 
 == Screenshots ==
 
