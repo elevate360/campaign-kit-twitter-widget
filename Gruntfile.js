@@ -95,6 +95,18 @@ module.exports = function (grunt) {
 	        }
 	    },
 
+		// RTLCSS
+		rtlcss: {
+			main: {
+				options: {},
+				expand: true,
+				ext: '-rtl.css',
+				src: [
+					'assets/css/frontend.css'
+				]
+			}
+		},
+
 		cssmin: {
 			target: {
 				files: [{
@@ -165,7 +177,7 @@ module.exports = function (grunt) {
 		replace: {
 			Version: {
 				src: [
-					'campaignkit-twitter.php'
+					'<%= pkg.name %>.php'
 				],
 				overwrite: true,
 				replacements: [ {
@@ -191,51 +203,6 @@ module.exports = function (grunt) {
 					'README.md': 'readme.txt'
 				}
 			}
-		},
-
-		// Clean up dist directory
-		clean: {
-			main: ['dist']
-		},
-
-		// Copy the theme into the dist directory
-		copy: {
-			main: {
-				src:  [
-					'**',
-					'!csscomb.json',
-					'!node_modules/**',
-					'!.sass-cache/**',
-					'!sass/**',
-					'!dist/**',
-					'!orig/**',
-					'!.git/**',
-					'!Gruntfile.js',
-					'!package.json',
-					'!package-lock.json',
-					'!phpcs.xml.dist',
-					'!.gitignore',
-					'!.gitmodules',
-					'!**/Gruntfile.js',
-					'!**/package.json',
-					'!**/*~'
-				],
-				dest: 'dist/<%= pkg.name %>/'
-			}
-		},
-
-		// Compress build directory into <name>.<version>.zip
-		compress: {
-			main: {
-				options: {
-					mode: 'zip',
-					archive: './dist/<%= pkg.name %>.<%= pkg.version %>.zip'
-				},
-				expand: true,
-				cwd: 'dist/<%= pkg.name %>/',
-				src: ['**/*'],
-				dest: '<%= pkg.name %>/'
-			}
 		}
 
 	});
@@ -243,13 +210,11 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks( 'grunt-postcss' );
     grunt.loadNpmTasks( 'grunt-checktextdomain' );
     grunt.loadNpmTasks( 'grunt-combine-media-queries' );
-    grunt.loadNpmTasks( 'grunt-contrib-clean' );
-    grunt.loadNpmTasks( 'grunt-contrib-compress' );
-    grunt.loadNpmTasks( 'grunt-contrib-copy' );
     grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
     grunt.loadNpmTasks( 'grunt-contrib-jshint' );
     grunt.loadNpmTasks( 'grunt-contrib-watch' );
     grunt.loadNpmTasks( 'grunt-sass' );
+    grunt.loadNpmTasks( 'grunt-rtlcss' );
     grunt.loadNpmTasks( 'grunt-text-replace' );
     grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks( 'grunt-wp-css' );
@@ -260,6 +225,7 @@ module.exports = function (grunt) {
 		'cmq',
 		'postcss',
 		'wpcss',
+		'rtlcss',
 		'cssmin'
 	]);
 
@@ -268,15 +234,12 @@ module.exports = function (grunt) {
 		'uglify'
 	]);
 
-	grunt.registerTask( 'dist', [
+	grunt.registerTask( 'prepare', [
 		'checktextdomain',
 		'js',
 		'replace',
 		'wp_readme_to_markdown',
-		'css',
-		'clean',
-		'copy',
-		'compress'
+		'css'
 	]);
 
 };

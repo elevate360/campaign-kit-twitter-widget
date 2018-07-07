@@ -409,7 +409,11 @@ class Admin {
 
 		$current_screen = get_current_screen();
 
-		if ( $current_screen->base == 'settings_page_campaignkit-twitter-admin' ) {
+		if ( ! isset( $current_screen->base ) ) {
+			return;
+		}
+
+		if ( $current_screen->base === 'settings_page_campaignkit-twitter-admin' ) {
 
 			$content_api = '';
 

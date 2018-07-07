@@ -87,13 +87,23 @@ class plugin {
 		$options 	= Options::get_option();
 		$suffix 	= defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-		wp_enqueue_style(
-			'campaignkit-twitter-style',
-			CAMPAIGNKIT_TWITTER_URI . "assets/css/frontend{$suffix}.css",
-			[],
-			CAMPAIGNKIT_TWITTER_VERSION,
-			'all'
-		);
+		if ( is_rtl() ) {
+			wp_enqueue_style(
+				'campaignkit-twitter-style-rtl',
+				CAMPAIGNKIT_TWITTER_URI . "assets/css/frontend-rtl{$suffix}.css",
+				[],
+				CAMPAIGNKIT_TWITTER_VERSION,
+				'all'
+			);
+		} else {
+			wp_enqueue_style(
+				'campaignkit-twitter-style',
+				CAMPAIGNKIT_TWITTER_URI . "assets/css/frontend{$suffix}.css",
+				[],
+				CAMPAIGNKIT_TWITTER_VERSION,
+				'all'
+			);
+		}
 
 	}
 

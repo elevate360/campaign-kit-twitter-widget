@@ -4,7 +4,7 @@
  * Description: Display twitter feed by using widget, function and shortcode.
  * Plugin URI: https://bitbucket.org/campaignkitdev/campaignkit-twitter
  * Author: Campaign Kit
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author URI: https://campaignkit.co/
  * Text Domain: campaign-kit-twitter-widget
  * Domain Path: /languages

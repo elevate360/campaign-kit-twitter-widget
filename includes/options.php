@@ -67,7 +67,7 @@ class Options {
 
 		$default = [
 			'title'				=> '',
-			'screen_name' 		=> 'campaignkitau',
+			'screen_name' 		=> '',
 			'count'				=> 5,
 			'exclude_replies'	=> false,
 			'include_rts'		=> true,

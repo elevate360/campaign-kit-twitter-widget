@@ -1,13 +1,13 @@
 # Twitter Widget by Campaign Kit #
-**Contributors:** [elevate360](https://profiles.wordpress.org/elevate360), [campaignkit](https://profiles.wordpress.org/campaignkit)
-**Donate link:** https://campaignkit.co/
-**Tags:** twitter, tweet, tweets, latest-tweets, oauth, api, rest, api, widget, sidebar, shortcode
-**Requires at least:** 4.5
-**Tested up to:** 4.9
-**Requires PHP:** 5.4
-**Stable tag:** 1.0.0
-**License:** GNU General Public License v2.0 (or later)
-**License URI:** http://www.opensource.org/licenses/gpl-license.php
+**Contributors:** [elevate360](https://profiles.wordpress.org/elevate360), [campaignkit](https://profiles.wordpress.org/campaignkit)  
+**Donate link:** https://campaignkit.co/  
+**Tags:** twitter, tweet, tweets, latest-tweets, oauth, api, rest, api, widget, sidebar, shortcode  
+**Requires at least:** 4.5  
+**Tested up to:** 4.9.7  
+**Requires PHP:** 5.4  
+**Stable tag:** 1.0.1  
+**License:** GNU General Public License v2.0 (or later)  
+**License URI:** http://www.opensource.org/licenses/gpl-license.php  
 
 A lightweight and stylish widget to display your latest Tweet for your WordPress site.
 
@@ -135,7 +135,7 @@ We also include custom properties between the output (**not** officially from Tw
 
 ### What options can I use for the shortcode? ###
 
-All the options are listed on the [plugin installation page](https://wordpress.org/plugins/campaign-kit-twitter-widget/installation/).
+All the options are listed on the [plugin installation page](https://wordpress.org/plugins/campaignkit-twitter/installation/).
 
 ### How to disable style and script ###
 
@@ -146,7 +146,7 @@ You can simply add this function into your theme functions:
 
 ### How to build my own Twitter markup? ###
 
-You can learn more at [plugin installation page](https://wordpress.org/plugins/campaign-kit-twitter-widget/installation/).
+You can learn more at [plugin installation page](https://wordpress.org/plugins/campaignkit-twitter/installation/).
 
 ## Screenshots ##
 
@@ -155,6 +155,11 @@ You can learn more at [plugin installation page](https://wordpress.org/plugins/c
 3. Campaign Kit - Twitter widget display.
 
 ## Changelog ##
+
+### 1.0.1 ###
+
+* Added RTL Support
+* Fixed Undefined index for non Admin setting page
 
 ### 1.0.0 ###
 
